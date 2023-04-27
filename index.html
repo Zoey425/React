@@ -15,19 +15,32 @@
 <script type="text/babel">
     const root = document.getElementById("root");
    
-    const Title = (
+    const Title = () => (
       <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
         Hello Im a title</h3>
     );
+      // ^^ 상단 코드와 동일
+      //  function Title() {
+      //     return (
+      //       <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+      //       Hello Im a title</h3>
+      //     );
+      //   }
 
     
-    const Button = 
+    const Button = () =>
     (<button onClick={() => console.log("im clicked")}>
       Click me
     </button>);
     
-    const container = React.createElement("div", null, [Title, Button])
+    const Container = () => (
+      <div>
+        <button>Hello</button>
+        <Title />
+        <Button />
+      </div>
+    )
    
-    ReactDOM.render(container, root);
+    ReactDOM.render(<Container />, root);
   </script>
 </html>
